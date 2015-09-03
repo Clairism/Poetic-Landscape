@@ -25,7 +25,6 @@ public class lighttrigger : MonoBehaviour {
 
 	void OnTriggerExit(Collider other) {
 		gameObject.GetComponent<Light>().enabled = true;
-
 		bbc.SetActive(true);
 
 	}
