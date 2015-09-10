@@ -15,11 +15,22 @@ public class DIsappear : MonoBehaviour {
 
 	
 	void OnTriggerEnter(Collider other) {
-		gameObject.GetComponent<MeshRenderer>().enabled = false;
+
+		GameObject.Find("Purple").GetComponent<MeshRenderer>().enabled = true ;
+
+		GameObject.Find("Green2").transform.Rotate(new Vector3( 50f, 0, 0) );
+		GameObject.Find ("Green1").transform.Rotate (new Vector3 (-50f, 0, 0));
+
+		GameObject.Find("Blue1").transform.Translate(Vector3.forward * 3f);
+		GameObject.Find("Blue3").transform.Translate(Vector3.back * 3f);
+		GameObject.Find("Green3").transform.Translate(Vector3.left * 5f);
+
 	}
 
 	void OnTriggerExit(Collider other) {
-		gameObject.GetComponent<MeshRenderer>().enabled = true;
+		GameObject.Find("Purple").GetComponent<MeshRenderer>().enabled = false;
+		GameObject.Find("Green3").transform.Translate(Vector3.right * 5f);
+
 	}
 	
 
